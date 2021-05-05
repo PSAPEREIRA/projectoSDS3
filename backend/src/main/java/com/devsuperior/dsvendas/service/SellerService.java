@@ -19,7 +19,7 @@ public class SellerService {
 	//Method to return a DTO list from entities(original objects) list using lambda expression
 	public List<SellerDTO>findAll(){
 		List<Seller>result = repository.findAll();
-		return result.stream().map(sellerEntity -> new SellerDTO(sellerEntity)).collect(Collectors.toList());
+		return result.stream().map(sellerEntry -> new SellerDTO(sellerEntry)).collect(Collectors.toList());
 	}
 
 }
