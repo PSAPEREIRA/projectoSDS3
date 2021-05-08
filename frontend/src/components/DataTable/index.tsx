@@ -8,6 +8,7 @@ import { BASE_URL } from "utils/requests";
 const DataTable = () => {
 
     const [activePage, setActivePage] = useState(0);
+
     const [page, setPage] = useState<SalePage>({
         first: true,
         last: true,
@@ -17,7 +18,7 @@ const DataTable = () => {
     });
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/sales?page=${activePage}&size=20&sort=date,des`)
+        axios.get(`${BASE_URL}/sales?page=${activePage}&size=20&sort=date,desc`)
             .then(response => {
                 setPage(response.data);
             });
