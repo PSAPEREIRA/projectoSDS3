@@ -33,7 +33,7 @@ const BarChart = () => {
     });
 
     useEffect(() => {
-        axios.get(BASE_URL + '/sales/successBySeller')
+        axios.get(`${BASE_URL}/sales/successBySeller`)
             .then(response => {
                 const data = response.data as SaleSuccess[];
                 const myLabels = data.map(labelItem => labelItem.sellerName);

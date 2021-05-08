@@ -23,7 +23,7 @@ const DonutChart = () => {
     }
     */
     useEffect(() => {
-        axios.get(BASE_URL + '/sales/amountBySeller')
+        axios.get(`${BASE_URL}/sales/amountBySeller`)
             .then(response => {
                 const data = response.data as SaleSum[];
                 const myLabels = data.map(labelItem => labelItem.sellerName);
